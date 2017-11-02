@@ -47,7 +47,7 @@ squishMap f (x:xs) = prepend (f x) $ squishMap f xs
 
 -- 7
 squishAgain :: [[a]] -> [a]
-squishAgain = squishMap id
+squishAgain = squishMap squish [x]
 
 -- 8
 myMaximumBy :: (a -> a -> Ordering) -> [a] -> a
