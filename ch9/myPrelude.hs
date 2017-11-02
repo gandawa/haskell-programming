@@ -36,7 +36,15 @@ squish (x:xs) = prepend x $ squish xs
  where
    prepend [] rest = rest
    prepend (x:xs) rest = x : prepend xs rest
-
+   
+ -- Alternatively,
+ --
+ --
+ -- squish :: [[a]] -> [a]
+    squish [[]] = []
+    squish [] = []
+    squish (x:xs) = x ++ squish xs
+    
 -- 6
 squishMap :: (a -> [b]) -> [a] -> [b]
 squishMap _ [] = []
